@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/511/original/%E2%9C%A8my_history_teacher%E2%9C%A8.jpeg?1762420124"
+      type="image/x-icon"
+    />
+    <title>Edna Mode — The Art of No Capes</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f6f3;
+        color: #111;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 8rem 2rem 6rem;
+        position: relative;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 8vw, 8rem);
+        font-weight: 900;
+        letter-spacing: -2px;
+        line-height: 0.9;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      .hero .inline-image {
+        display: inline-block;
+        width: clamp(100px, 10vw, 150px);
+        height: clamp(100px, 10vw, 150px);
+        border-radius: 10px;
+        overflow: hidden;
+        vertical-align: middle;
+        margin: 0 10px;
+      }
+
+      .hero .inline-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .hero .inline-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .hero p {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        font-size: 1.1rem;
+        color: #333;
+        margin-top: 1.5rem;
+      }
+
+      .hero button {
+        margin-top: 2rem;
+        background: #000;
+        color: #f8f6f3;
+        padding: 0.9rem 2rem;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+      }
+
+      .hero button:hover {
+        background: #ffca28;
+        color: #000;
+        transform: translateY(-3px);
+      }
+
+      .quote-text {
+        padding: 2rem;
+        font-style: italic;
+        color: #000;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      /* ===== PICTURES SECTION ===== */
+      .pictures {
+        color: #000;
+        padding: 2rem 2rem;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+      }
+
+      .event-card1 {
+        position: relative;
+        width: 320px;
+        height: 480px;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/510/original/download_-_2025-11-06T110825.408.jpeg?1762420116");
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s ease;
+      }
+
+      .event-card2 {
+        position: relative;
+        width: 320px;
+        height: 480px;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/513/original/Aunty_Edna_Short_film_Explain_on_my_Youtube_Chnnel_To_watch_click_on_The_LINk_.jpeg?1762421824");
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s ease;
+      }
+
+      .event-card3 {
+        position: relative;
+        width: 320px;
+        height: 480px;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/512/original/Juhubh.jpeg?1762421815");
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s ease;
+      }
+
+      .event-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .about-text {
+        flex: 1 1 350px;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .about-text h1 {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+        margin-bottom: 1rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .about-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #ddd;
+      }
+
+      /* ===== ABOUT SECTION ===== */
+      .about {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+      }
+
+      .about-text {
+        flex: 1 1 350px;
+        max-width: 500px;
+      }
+
+      .about-text h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .about-text p {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #0f0f0f;
+      }
+
+      .about-cards {
+        flex: 1 1 400px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+      }
+
+      .card {
+        margin-top: 30px;
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/516/original/download_-_2025-11-06T124038.253.jpeg?1762425649");
+        border-radius: 20px;
+        padding: 2rem;
+        width: 500px;
+        height: 500px;
+        text-align: left;
+        transition: transform 0.3s ease, background 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .card span {
+        font-size: 1.8rem;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
+      /* ===== FUN FACTS SECTION ===== */
+      .facts {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        color: #000;
+        text-align: center;
+        overflow: visible;
+        background-color: #f8f6f3;
+        z-index: 1;
+      }
+
+      .decor {
+        position: absolute;
+        z-index: 10;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 120px;
+        height: 120px;
+        border-radius: 12px;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .decor1 {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/511/original/%E2%9C%A8my_history_teacher%E2%9C%A8.jpeg?1762420124");
+        top: -30px;
+        left: -200px;
+        transform: rotate(-6deg);
+        animation-delay: 0s;
+      }
+
+      .decor2 {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/522/original/download_-_2025-11-06T142135.351.jpeg?1762431726");
+        top: -60px;
+        right: -160px;
+        transform: rotate(5deg);
+        animation-delay: 2s;
+      }
+
+      .decor3 {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/520/original/edna.jpeg?1762431615");
+        bottom: -10px;
+        left: -190px;
+        transform: rotate(3deg);
+        animation-delay: 1s;
+      }
+
+      .decor4 {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/518/original/Edna_Mode_%281%29.jpeg?1762431599");
+        bottom: 0;
+        right: -130px;
+        transform: rotate(-8deg);
+        animation-delay: 3s;
+      }
+
+      .decor5 {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/523/original/Edna_pra_sempre.jpeg?1762431734");
+        bottom: 180px;
+        right: -200px;
+        transform: rotate(7deg);
+        animation-delay: 4s;
+      }
+
+      .decor6 {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/521/original/download_-_2025-11-06T142142.206.jpeg?1762431715");
+        top: 170px;
+        left: -220px;
+        transform: rotate(-12deg);
+        animation-delay: 1.5s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(-6deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(-1deg);
+        }
+        100% {
+          transform: translateY(0) rotate(-6deg);
+        }
+      }
+      .decor1 {
+        animation: float1 6s ease-in-out infinite;
+      }
+      .decor2 {
+        animation: float2 6s ease-in-out infinite;
+      }
+      .decor3 {
+        animation: float3 6s ease-in-out infinite;
+      }
+      .decor4 {
+        animation: float4 6s ease-in-out infinite;
+      }
+      .decor5 {
+        animation: float5 6s ease-in-out infinite;
+      }
+      .decor6 {
+        animation: float6 6s ease-in-out infinite;
+      }
+
+      @keyframes float1 {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-6deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(-1deg);
+        }
+      }
+
+      @keyframes float2 {
+        0%,
+        100% {
+          transform: translateY(0) rotate(5deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(10deg);
+        }
+      }
+
+      @keyframes float3 {
+        0%,
+        100% {
+          transform: translateY(0) rotate(3deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(8deg);
+        }
+      }
+
+      @keyframes float4 {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-8deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(-3deg);
+        }
+      }
+
+      @keyframes float5 {
+        0%,
+        100% {
+          transform: translateY(0) rotate(7deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(12deg);
+        }
+      }
+
+      @keyframes float6 {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-12deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(-7deg);
+        }
+      }
+
+      .facts h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.025em;
+      }
+
+      .facts ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .facts li {
+        padding: 1rem 0;
+        border-bottom: 1px solid #eaeaea;
+        line-height: 1.5;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .facts li:last-child {
+        border-bottom: none;
+      }
+
+      .facts li::before {
+        content: "•";
+        color: #000;
+        position: absolute;
+        left: 0;
+        font-size: 1.2rem;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .facts {
+          background: transparent;
+        }
+
+        .facts li {
+          border-bottom-color: #333;
+        }
+
+        .facts li::before {
+          color: #fff;
+        }
+      }
+
+      .legacy {
+        padding: 4rem 2rem;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .legacy h2 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        margin-bottom: 2rem;
+        color: #000;
+      }
+
+      .legacy-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .legacy-text {
+        font-family: "Georgia", serif;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .legacy-highlight {
+        padding: 1rem;
+        border-left: 3px solid #000;
+        background: #f8f8f8;
+      }
+
+      .legacy-highlight span {
+        font-style: italic;
+        font-weight: 600;
+        color: #000;
+      }
+
+      .legacy-button {
+        background: transparent;
+        color: #000;
+        padding: 0.8rem 2rem;
+        border: 2px solid #000;
+        border-radius: 0;
+        font-size: 0.9rem;
+        cursor: pointer;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+      }
+
+      .legacy-button:hover {
+        background: #000;
+        color: #fff;
+        transform: translateY(-2px);
+      }
+      footer {
+        margin-top: 5rem;
+        padding: 1rem;
+        background: #000;
+        color: #f8f6f3;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 600px) {
+        .hero h1 {
+          line-height: 1;
+        }
+
+        .about {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .about-cards {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .facts {
+          text-align: center;
+        }
+
+        .facts ul {
+          text-align: left;
+          display: inline-block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+      <h1>THE ART OF</h1>
+      <h1>
+        *(
+        <span class="inline-image">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/175/509/original/Edna_Mode__I_never_look_back__darling!_It_distracts_from_the_now_.jpeg?1762419215"
+            alt="Edna Mode"
+          />
+        </span>
+        )
+      </h1>
+      <h1>NO CAPES</h1>
+      <p>
+        Meet <strong>Edna 'E' Mode</strong> — the visionary designer redefining
+        superhero style with elegance, wit, and fearless innovation.
+      </p>
+      <button
+        onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})"
+      >
+        Discover Edna's Genius
+      </button>
+    </section>
+
+    <!-- ===== PICTURES SECTION ===== -->
+    <section class="pictures" id="pictures">
+      <div class="event-card1"></div>
+      <div class="event-card2"></div>
+      <div class="event-card3"></div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+
+    <section class="about">
+      <div class="about-text about-title-genius">
+        <h1>The <span>*(</span>Genius)</h1>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-text about-main">
+        <h2>I am Edna Mode.</h2>
+        <p>
+          Genius, designer, visionary.
+          <br />
+          <br />
+          Edna Mode is a half-Japanese, half-German fashion designer and
+          creative visionary. Renowned for her brilliance and success, she began
+          her career as the world’s foremost designer of superhero costumes.
+          Today, with a matured and refined sense of style, she continues to
+          lead the fashion world. Yet, she longs for the return of superheroes,
+          craving the challenge of blending cutting-edge technology with her
+          impeccable fashion sense to unveil extraordinary creations to the
+          public. Petite yet powerful, Edna treats her clients like family, but
+          always upholds her famous rule: no capes!
+        </p>
+      </div>
+
+      <div class="card"></div>
+    </section>
+
+    <section class="about">
+      <div class="about-text about-fun">
+        <h1>Fun <span>*(</span>Facts)</h1>
+      </div>
+    </section>
+
+    <section class="facts">
+      <div class="decor decor1"></div>
+      <div class="decor decor2"></div>
+      <div class="decor decor3"></div>
+      <div class="decor decor4"></div>
+      <div class="decor decor5"></div>
+      <div class="decor decor6"></div>
+
+      <h2>Fun Facts About Edna</h2>
+      <ul>
+        <li>No capes! Edna is the superhero of common sense in fashion.</li>
+        <li>She is petite but commands every room she enters.</li>
+        <li>Edna’s designs blend elegance with bulletproof functionality.</li>
+        <li>
+          Her voice is as iconic as her glasses — unforgettable and
+          unapologetic.
+        </li>
+        <li>She secretly runs the world’s superhero wardrobe like a boss.</li>
+      </ul>
+    </section>
+
+    <section class="about">
+      <div class="about-text about-iconic">
+        <h1>Why Edna is <span>*(</span>iconic)</h1>
+      </div>
+    </section>
+
+    <section class="legacy">
+      <div class="legacy-content">
+        <p class="legacy-text">
+          Edna Mode proves that true genius is equal parts style, wit, and
+          fearlessness. Her creations don't just make superheroes look good—they
+          protect, empower, and inspire.
+        </p>
+        <div class="legacy-highlight">
+          <span>"I never look back, darling. It distracts from the now."</span>
+        </div>
+        <button
+          class="legacy-button"
+          onclick="alert('Yes, darling. Always iconic. 🕶️')"
+        >
+          Celebrate Edna
+        </button>
+      </div>
+    </section>
+  </body>
+</html>
